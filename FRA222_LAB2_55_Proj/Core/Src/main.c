@@ -45,8 +45,8 @@ DMA_HandleTypeDef hdma_adc1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-uint32_t adcRawData;
-uint16_t adcDMA[20];
+//uint32_t adcRawData;
+//uint16_t adcDMA[20];
 //static double Temp_tempo ;
 //static double Volt_tempo ;
 static double real_Temp;
@@ -326,18 +326,18 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
-	if(GPIO_Pin == GPIO_PIN_13)
-	{
-		HAL_ADC_Start_DMA(&hadc1, buffer, 20);
-		//HAL_ADC_Start_IT(&hadc1);
-	}
-}
-void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
-{
-	//adcRawData = HAL_ADC_GetValue(&hadc1);
-}
+//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+//{
+//	if(GPIO_Pin == GPIO_PIN_13)
+//	{
+//		HAL_ADC_Start_DMA(&hadc1, buffer, 20);
+//		//HAL_ADC_Start_IT(&hadc1);
+//	}
+//}
+//void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+//{
+//	//adcRawData = HAL_ADC_GetValue(&hadc1);
+//}
 
 void looper(){
 	int Temp = 0;
