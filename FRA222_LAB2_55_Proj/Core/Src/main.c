@@ -117,6 +117,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   HAL_ADC_Start_DMA(&hadc1, &buffer, 20);
   while (1)
   {
@@ -131,7 +132,7 @@ int main(void)
 	  }
 
 
-//	  HAL_Delay(10000);
+
   }
   /* USER CODE END 3 */
 }
@@ -326,18 +327,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-//{
-//	if(GPIO_Pin == GPIO_PIN_13)
-//	{
-//		HAL_ADC_Start_DMA(&hadc1, buffer, 20);
-//		//HAL_ADC_Start_IT(&hadc1);
-//	}
-//}
-//void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
-//{
-//	//adcRawData = HAL_ADC_GetValue(&hadc1);
-//}
+
 
 void looper(){
 	int Temp = 0;
@@ -354,8 +344,6 @@ void looper(){
 	Volt_avg = Volt/10;
 	real_Temp = (((((3.3*Temp_avg)/4095)*1000) - 760)/2.5)+ 25 + 273.15;
 	real_Volt = ((3.3*Volt_avg/4095)*1000)*2;
-//	Temp_tempo = Temp_avg;
-//	Volt_tempo = Volt_avg;
 	Temp = 0;
 	Volt = 0;
 }
