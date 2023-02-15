@@ -1013,11 +1013,11 @@ int main(void)
  8000c8c:	f000 f8ea 	bl	8000e64 <MX_USART2_UART_Init>
   MX_ADC1_Init();
  8000c90:	f000 f886 	bl	8000da0 <MX_ADC1_Init>
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   HAL_ADC_Start_DMA(&hadc1, &buffer, 20);
  8000c94:	2214      	movs	r2, #20
  8000c96:	490a      	ldr	r1, [pc, #40]	; (8000cc0 <main+0x48>)
@@ -1567,10 +1567,9 @@ static void MX_GPIO_Init(void)
  8000fd4:	00000000 	.word	0x00000000
 
 08000fd8 <looper>:
-//void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
-//{
-//	//adcRawData = HAL_ADC_GetValue(&hadc1);
-//}
+
+/* USER CODE BEGIN 4 */
+
 
 void looper(){
  8000fd8:	b580      	push	{r7, lr}
@@ -1715,8 +1714,6 @@ void looper(){
  8001106:	460b      	mov	r3, r1
  8001108:	4912      	ldr	r1, [pc, #72]	; (8001154 <looper+0x17c>)
  800110a:	e9c1 2300 	strd	r2, r3, [r1]
-//	Temp_tempo = Temp_avg;
-//	Volt_tempo = Volt_avg;
 	Temp = 0;
  800110e:	2300      	movs	r3, #0
  8001110:	617b      	str	r3, [r7, #20]
